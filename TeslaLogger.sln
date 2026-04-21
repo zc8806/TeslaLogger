@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaLogger", "TeslaLogger\TeslaLogger.csproj", "{9932F717-1BEE-4D0F-B5B0-FB8665FFE647}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37F4A1BB-79C0-4358-A773-738FC7CE332A}"
+	ProjectSection(SolutionItems) = preProject
+		TeslaLogger\sqlschema.sql = TeslaLogger\sqlschema.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Grafana", "Grafana", "{4C4289D6-042B-4641-ACF7-1E2F3FD3F9CF}"
+	ProjectSection(SolutionItems) = preProject
+		TeslaLogger\Grafana\Degradation.json = TeslaLogger\Grafana\Degradation.json
+		TeslaLogger\Grafana\km Stand.json = TeslaLogger\Grafana\km Stand.json
+		TeslaLogger\Grafana\Ladehistorie.json = TeslaLogger\Grafana\Ladehistorie.json
+		TeslaLogger\Grafana\Laden.json = TeslaLogger\Grafana\Laden.json
+		TeslaLogger\Grafana\Trip.json = TeslaLogger\Grafana\Trip.json
+		TeslaLogger\Grafana\Vampir Drain.json = TeslaLogger\Grafana\Vampir Drain.json
+		TeslaLogger\Grafana\Verbrauch.json = TeslaLogger\Grafana\Verbrauch.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQTTClient", "MQTTClient\MQTTClient.csproj", "{6333ABAD-51F4-430D-9BA5-0047602612D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRTM", "srtm\src\SRTM\SRTM.csproj", "{AE6A978E-8084-48C7-85DD-2E90FCD82F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logfile", "Logfile\Logfile.csproj", "{B6462053-A913-47B8-8719-CA08EE5B2E4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsTeslalogger", "UnitTestsTeslalogger\UnitTestsTeslalogger.csproj", "{AE80A9DA-E9B1-4BFD-8D2D-A2EA81B8EADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSMMapGenerator", "OSMMapGenerator\OSMMapGenerator.csproj", "{852390A2-450B-43B3-A79A-F6C1DD988AE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TLUpdate", "TLUpdate\TLUpdate.csproj", "{DEC85AE5-91E5-4DC7-A35A-F98E53568A85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9932F717-1BEE-4D0F-B5B0-FB8665FFE647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9932F717-1BEE-4D0F-B5B0-FB8665FFE647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9932F717-1BEE-4D0F-B5B0-FB8665FFE647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9932F717-1BEE-4D0F-B5B0-FB8665FFE647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6333ABAD-51F4-430D-9BA5-0047602612D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6333ABAD-51F4-430D-9BA5-0047602612D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6333ABAD-51F4-430D-9BA5-0047602612D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6333ABAD-51F4-430D-9BA5-0047602612D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6A978E-8084-48C7-85DD-2E90FCD82F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6A978E-8084-48C7-85DD-2E90FCD82F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6A978E-8084-48C7-85DD-2E90FCD82F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6A978E-8084-48C7-85DD-2E90FCD82F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6462053-A913-47B8-8719-CA08EE5B2E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6462053-A913-47B8-8719-CA08EE5B2E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6462053-A913-47B8-8719-CA08EE5B2E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6462053-A913-47B8-8719-CA08EE5B2E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE80A9DA-E9B1-4BFD-8D2D-A2EA81B8EADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE80A9DA-E9B1-4BFD-8D2D-A2EA81B8EADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE80A9DA-E9B1-4BFD-8D2D-A2EA81B8EADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE80A9DA-E9B1-4BFD-8D2D-A2EA81B8EADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852390A2-450B-43B3-A79A-F6C1DD988AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852390A2-450B-43B3-A79A-F6C1DD988AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852390A2-450B-43B3-A79A-F6C1DD988AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852390A2-450B-43B3-A79A-F6C1DD988AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC85AE5-91E5-4DC7-A35A-F98E53568A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC85AE5-91E5-4DC7-A35A-F98E53568A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC85AE5-91E5-4DC7-A35A-F98E53568A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC85AE5-91E5-4DC7-A35A-F98E53568A85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C4289D6-042B-4641-ACF7-1E2F3FD3F9CF} = {37F4A1BB-79C0-4358-A773-738FC7CE332A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19468AE0-9122-4697-94FD-17389927F087}
+	EndGlobalSection
+EndGlobal

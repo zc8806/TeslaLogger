@@ -1,0 +1,69 @@
+version: "3"
+services:
+
+  teslalogger:
+    build: docker/teslalogger/.
+    restart: always
+    volumes:
+      - ./TeslaLogger/www:/var/www/html
+      - ./TeslaLogger/bin:/etc/teslalogger
+      - ./TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
+      - ./TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
+      - ./docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
+      - teslalogger-tmp:/tmp/
+    depends_on:
+      - database
+    environment:
+      - TZ=Europe/Berlin
+    ports:
+      - 5010:5000
+
+  database:
+    image: mariadb:10.4.7
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
+      - ./TeslaLogger/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - TZ=Europe/Berlin
+
+  grafana:
+    image: grafana/grafana:10.0.1
+    restart: always
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=teslalogger
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=natel-discrete-panel,pr0ps-trackmap-panel,teslalogger-timeline-panel
+      - TZ=Europe/Berlin
+    ports:
+      - 3000:3000
+    volumes:
+      - ./TeslaLogger/bin:/etc/teslalogger
+      - ./TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
+      - ./TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
+      - ./TeslaLogger/GrafanaDB:/var/lib/grafana/
+      - ./TeslaLogger/GrafanaConfig/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yml
+      - ./TeslaLogger/GrafanaConfig/sample.yaml:/etc/grafana/provisioning/dashboards/dashboards.yml
+    depends_on:
+      - database
+
+  webserver:
+    build: docker/webserver/.
+    restart: always
+    volumes:
+      - ./docker/webserver/php.ini:/usr/local/etc/php/php.ini
+      - ./TeslaLogger/www:/var/www/html
+      - ./TeslaLogger/bin:/etc/teslalogger
+      - ./docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
+      - ./TeslaLogger/GrafanaConfig/datasource.yaml:/tmp/datasource-DOCKER
+      - teslalogger-tmp:/tmp/
+    ports:
+      - 8888:80
+    environment:
+      - TZ=Europe/Berlin
+
+volumes:
+    teslalogger-tmp:
